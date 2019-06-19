@@ -1,0 +1,29 @@
+server:
+  port: 5011
+spring:
+  cloud:
+    gateway:
+      discovery: 
+         locator: 
+            enabled: true
+            lowerCaseServiceId: true
+  application:
+    name: hsy-gateway
+  redis:
+    database: 0
+    host: 47.102.140.61
+    password: bdxdoctor2019
+    port: 6380
+    lettuce:
+      pool:
+        max-active: 15
+        max-wait: -1
+        max-idle: 15
+        min-idle: 10
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://47.102.140.61:9761/eureka/
